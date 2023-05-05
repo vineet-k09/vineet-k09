@@ -1,5 +1,13 @@
 ### Hi there 👋
+This is
+## Vineet Kumar Kushwaha
+I am a student currently at Acharya Institue of Technology under 4 Year UG Program for Data Sceince Course 🧑‍💻
 
+I am highly intreseted in 
+###  Web Development, Application and Game Development and Data Science 🔬
+You can contact me through my email address <a href="mailto:vineetkushwaha6325@gmail.com">vineetkushwaha6325@gmail.com</a>
+ 📬
+### Thank You 🌱
 <!--
 **vineetk-09/vineetk-09** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
