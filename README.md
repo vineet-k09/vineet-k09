@@ -1,24 +1,43 @@
-### Hi there 👋
-This is
-## Vineet Kumar Kushwaha
-I am a student currently at Acharya Institue of Technology under 4 Year UG Program for Data Sceince Course 🧑‍💻
+# Hi there, I’m  
+# **Vineet Kumar Kushwaha**
 
-I am highly intreseted in 
-###  Web Development, Application and Game Development and Data Science 🔬
-You can contact me through my email address <a href="mailto:vineetkushwaha6325@gmail.com">vineetkushwaha6325@gmail.com</a>
- 📬
-### Thank You 🌱
-<!--
-**vineetk-09/vineetk-09** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+🎓 Final-year Data Science undergrad at **Acharya Institute of Technology, Bengaluru**  
+🧠 Building brains with code, fueled by caffeine and curiosity.
 
-Here are some ideas to get you started:
+---
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## 👨‍💻 What I Do
+
+I’m on a mission to blend **creativity** with **code**.  
+Currently crafting full-stack **web apps**, experimenting with **AI**, and dreaming up **games** that make you feel something.
+
+**Core Interests:**
+- 🌐 Web Development (React, Express, MongoDB)
+- 🎮 Game & App Development
+- 📊 Data Science & Machine Learning  
+- ❤️ Building tools that are *functional, fast, and fabulous*
+
+---
+
+## 🚀 Projects I'm Proud Of
+🔹 [**Endxiety**](https://github.com/vineet-k09/Endxiety) — An AI-powered emotional support platform with real-time LLM responses for mental wellness.  
+🔹 [**Portfolio Website**](https://vineet-k09.github.io/indexOLD.html) — A showcase of skills and sass, built with HTML/CSS/JS. *(React version coming soon...)*
+
+More exciting stuff cooking. Stay tuned.
+
+---
+
+## 💬 Let's Connect
+
+📬 Drop me a mail at  
+**[vineetkushwaha6325@gmail.com](mailto:vineetkushwaha6325@gmail.com)**  
+
+🔗 Find me on  
+[**LinkedIn**](https://www.linkedin.com/in/vineet-kushwaha-2666b5257/)  
+[**Portfolio (old)**](https://vineet-k09.github.io/indexOLD.html)  
+
+---
+
+> “Code is poetry. I'm just here to write a few symphonies in JavaScript.”
+
+🧿 *Keep building. Stay curious.*  
