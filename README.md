@@ -22,6 +22,7 @@ Currently crafting full-stack **web apps**, experimenting with **AI**, and dream
 ## 🚀 Projects I'm Proud Of
 🔹 [**Endxiety**](https://github.com/vineet-k09/Endxiety) — An AI-powered emotional support platform with real-time LLM responses for mental wellness.  
 🔹 [**Saarthi AI**](https://github.com/vineet-k09/saarthi-ai) ([Website](https://saarthi-ai-one.vercel.app/))- An AI-driven platform providing multilingual audio and text support for helping users find and apply for best government schemes for them. <br>
+🔹 [**BiblioVerse**](https://github.com/vineet-k09/E-Book-Recommendation) - E-Book Recommendation project based on hadoop and react with spark <br>
 🔹 [**Bengaluru AI Road Guardian**](https://github.com/vineet-k09/potholeaAnalytics) — An AI-driven pothole reporting web app with geolocation and emergency dashboard features.  
 🔹 [**Portfolio Website**](https://vineet-k09.github.io/indexOLD.html) — A showcase of skills and sass, built with HTML/CSS/JS. *(React version coming soon...)*
 
