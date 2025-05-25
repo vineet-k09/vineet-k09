@@ -1,6 +1,9 @@
 # Hi there, I’m  
 # **Vineet Kumar Kushwaha**
 
+[![Typing SVG](https://readme-typing-svg.demolab.com/?lines=Web+Developer;Data+Scientist;UI-UX+Designer;&center=true&color=40b983&duration=3000&multiline=false&width=1000)](https://github.com/vineet-k09)
+ 
+
 🎓 Final-year Data Science undergrad at **Acharya Institute of Technology, Bengaluru**  
 🧠 Building brains with code, fueled by caffeine and curiosity.
 
