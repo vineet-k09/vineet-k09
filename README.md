@@ -48,6 +48,10 @@ More exciting stuff cooking. Stay tuned.
 
 🧿 *Keep building. Stay curious.*  
 
-<p align="center">
-  <img src="https://github.com/vineet-k09/vineet-k09/blob/output/github-contribution-grid-snake.svg" alt="snake gif" />
-</p>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/platane/platane/output/github-contribution-grid-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/platane/platane/output/github-contribution-grid-snake.svg">
+  <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/platane/platane/output/github-contribution-grid-snake.svg">
+</picture>
+
+_generated with [Platane/snk](https://github.com/Platane/snk)_
