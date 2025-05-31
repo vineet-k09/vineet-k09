@@ -47,3 +47,7 @@ More exciting stuff cooking. Stay tuned.
 > “Code is poetry. I'm just here to write a few symphonies in JavaScript.”
 
 🧿 *Keep building. Stay curious.*  
+
+<p align="center">
+  <img src="https://github.com/vineet-k09/vineet-k09/blob/output/github-contribution-grid-snake.svg" alt="snake gif" />
+</p>
