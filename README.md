@@ -1,7 +1,7 @@
 # Hi there, I’m  
 # **Vineet Kumar Kushwaha**
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=22&duration=1200&pause=800&color=00ADB5&center=true&vCenter=true&multiline=false&width=1000&lines=🚀+Web+Developer;🧠+Aspiring+Data+Scientist;🎨+UI%2FUX+Design+Tinkerer;☕+Fueled+by+Caffeine+%26+Code)](https://github.com/vineet-k09)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Major+Mono+Display&size=22&duration=3000&pause=800&color=00ADB5&center=true&vCenter=true&multiline=false&width=1000&lines=🚀+Web+Developer;🧠+Aspiring+Data+Scientist;🎨+UI%2FUX+Design+Tinkerer;☕+Fueled+by+Caffeine+%26+Code)](https://github.com/vineet-k09)
 
 🎓 Final-year Data Science undergrad at **Acharya Institute of Technology, Bengaluru**  
 🧠 Building brains with code, fueled by caffeine and curiosity.
