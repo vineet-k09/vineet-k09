@@ -1,8 +1,7 @@
 # Hi there, I’m  
 # **Vineet Kumar Kushwaha**
 
-[![Typing SVG](https://readme-typing-svg.demolab.com/?lines=Web+Developer;Data+Scientist;UI-UX+Designer;&center=true&color=40b983&duration=3000&multiline=false&width=1000)](https://github.com/vineet-k09)
- 
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=22&duration=1200&pause=800&color=00ADB5&center=true&vCenter=true&multiline=false&width=1000&lines=🚀+Web+Developer;🧠+Aspiring+Data+Scientist;🎨+UI%2FUX+Design+Tinkerer;☕+Fueled+by+Caffeine+%26+Code)](https://github.com/vineet-k09)
 
 🎓 Final-year Data Science undergrad at **Acharya Institute of Technology, Bengaluru**  
 🧠 Building brains with code, fueled by caffeine and curiosity.
@@ -23,11 +22,26 @@ Currently crafting full-stack **web apps**, experimenting with **AI**, and dream
 ---
 
 ## 🚀 Projects I'm Proud Of
-🔹 [**Endxiety**](https://github.com/vineet-k09/Endxiety) — An AI-powered emotional support platform with real-time LLM responses for mental wellness.  
-🔹 [**Saarthi AI**](https://github.com/vineet-k09/saarthi-ai) ([Website](https://saarthi-ai-one.vercel.app/))- An AI-driven platform providing multilingual audio and text support for helping users find and apply for best government schemes for them. <br>
-🔹 [**BiblioVerse**](https://github.com/vineet-k09/E-Book-Recommendation) - E-Book Recommendation project based on hadoop and react with spark <br>
-🔹 [**Bengaluru AI Road Guardian**](https://github.com/vineet-k09/potholeaAnalytics) — An AI-driven pothole reporting web app with geolocation and emergency dashboard features.  
-🔹 [**Portfolio Website**](https://vineet-k09.github.io/indexOLD.html) — A showcase of skills and sass, built with HTML/CSS/JS. *(React version coming soon...)*
+🔹 [**Endxiety**](https://github.com/vineet-k09/Endxiety) <br>
+💡 An AI-powered emotional support platform brewed by our hackathon team. <br>
+🧠 Tech: React, OpenAI API, MongoDB, Vitejs <br>
+🎯 Real-time LLM chat, emotion tracking, and community chat features. <br>
+
+🔹 [**Saarthi AI**](https://github.com/vineet-k09/saarthi-ai) <br>
+💡 [Website](https://saarthi-ai-one.vercel.app/) <br>
+🌍 Multilingual government scheme recommender with AI-driven audio and text support. <br>
+📢 Tech: React, TypeScript, ToughTongueAI, ChatBaseAPI <br>
+
+🔹 [**BiblioVerse**](https://github.com/vineet-k09/E-Book-Recommendation) <br>
+📚 E-Book Recommendation project system <br>
+🧠 Tech: React, MongoDB, NodeJS, Hadoop, PySpark <br>
+
+🔹 [**Bengaluru AI Road Guardian**](https://github.com/vineet-k09/potholeaAnalytics) <br>
+📍 Pothole detection web app with emergency dashboard and geolocation <br>
+🛠️ AI image classification + map APIs  <br>
+
+🔹 [**Portfolio Website**](https://vineet-k09.github.io/indexOLD.html) <br>
+🎨 Built from scratch with HTML/CSS/JS *(React version in progress)* <br>
 
 More exciting stuff cooking. Stay tuned.
 
@@ -39,8 +53,7 @@ More exciting stuff cooking. Stay tuned.
 **[vineetkushwaha6325@gmail.com](mailto:vineetkushwaha6325@gmail.com)**  
 
 🔗 Find me on  
-[**LinkedIn**](https://www.linkedin.com/in/vineet-kushwaha-2666b5257/)  
-[**Portfolio (old)**](https://vineet-k09.github.io/indexOLD.html)  
+[**LinkedIn**](https://www.linkedin.com/in/vineet-kushwaha-2666b5257/)🔹[**Portfolio (Legacy Version)**](https://vineet-k09.github.io/indexOLD.html)  
 
 ---
 
