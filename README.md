@@ -27,6 +27,13 @@ Currently crafting full-stack **web apps**, experimenting with **AI**, and dream
 🧠 Tech: React, OpenAI API, MongoDB, Vitejs <br>
 🎯 Real-time LLM chat, emotion tracking, and community chat features. <br>
 
+
+🔹 [**Music Generation Through Hand Gesture**](https://github.com/shyamkrishnabnair/hand-gesture-recognition-mediapipe-main) <br>
+🎶 Turn your hands into instruments, and your gestures into melodies. <br>
+🧠 Tech: MediaPipe, OpenCV, FCNN, MIDI, CustomTkinter v6, Python (3.8+), Multithreading <br>
+🎹 Real-time gesture-based music generation with dynamic MIDI playback, volume/mute via pinch-drag, and custom live notation display. <br>
+🚀 “Train Your Own Gesture” module coming soon for personalized control. <br>
+
 🔹 [**Saarthi AI**](https://github.com/vineet-k09/saarthi-ai) <br>
 💡 [Website](https://saarthi-ai-one.vercel.app/) <br>
 🌍 Multilingual government scheme recommender with AI-driven audio and text support. <br>
