@@ -37,11 +37,11 @@ Currently crafting full-stack **web apps**, experimenting with **AI**, and dream
 🔹 [**Saarthi AI**](https://github.com/vineet-k09/saarthi-ai) <br>
 💡 [Website](https://saarthi-ai-one.vercel.app/) <br>
 🌍 Multilingual government scheme recommender with AI-driven audio and text support. <br>
-📢 Tech: React, TypeScript, ToughTongueAI, ChatBaseAPI <br>
+📢 Tech: ReactJS, TypeScript, ToughTongueAI, ChatBaseAPI <br>
 
 🔹 [**BiblioVerse**](https://github.com/vineet-k09/E-Book-Recommendation) <br>
 📚 E-Book Recommendation project system <br>
-🧠 Tech: React, MongoDB, NodeJS, Hadoop, PySpark <br>
+🧠 Tech: NextJS, MongoDB, NodeJS, Hadoop, PySpark <br>
 
 🔹 [**Bengaluru AI Road Guardian**](https://github.com/vineet-k09/potholeaAnalytics) <br>
 📍 Pothole detection web app with emergency dashboard and geolocation <br>
