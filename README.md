@@ -1,5 +1,6 @@
 # Hi there, I’m  
-# **Vineet Kumar Kushwaha**
+# **Vineet Kumar Kushwaha** 
+[**Click me!**](https://vineetnotfound.vercel.app/)
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Major+Mono+Display&size=22&duration=3000&pause=800&color=00ADB5&center=true&vCenter=true&multiline=false&width=1000&lines=🚀+Web+Developer;🧠+Aspiring+Data+Scientist;🎨+UI%2FUX+Design+Tinkerer;☕+Fueled+by+Caffeine+%26+Code)](https://github.com/vineet-k09)
 
@@ -47,8 +48,9 @@ Currently crafting full-stack **web apps**, experimenting with **AI**, and dream
 📍 Pothole detection web app with emergency dashboard and geolocation <br>
 🛠️ AI image classification + map APIs  <br>
 
-🔹 [**Portfolio Website**](https://vineet-k09.github.io/indexOLD.html) <br>
-🎨 Built from scratch with HTML/CSS/JS *(React version in progress)* <br>
+🔹 [**Portfolio Website**](https://vineetnotfound.vercel.app/)() <br>
+🎨 Built on Nextjs and TailwindCSS <br>
+📍 [Legarcy Version](https://vineet-k09.github.io/indexOLD.html) <br>
 
 More exciting stuff cooking. Stay tuned.
 
@@ -60,7 +62,7 @@ More exciting stuff cooking. Stay tuned.
 **[vineetkushwaha6325@gmail.com](mailto:vineetkushwaha6325@gmail.com)**  
 
 🔗 Find me on  
-[**LinkedIn**](https://www.linkedin.com/in/vineet-kushwaha-2666b5257/)🔹[**Portfolio (Legacy Version)**](https://vineet-k09.github.io/indexOLD.html)  
+[**LinkedIn**](https://www.linkedin.com/in/vineet-kushwaha-2666b5257/)🔹[**Portfolio**](https://vineetnotfound.vercel.app/)  
 
 ---
 
