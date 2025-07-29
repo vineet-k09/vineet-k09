@@ -1,5 +1,3 @@
-![Header](./header.png)
-
 # Hi there, I’m  
 # **Vineet Kumar Kushwaha** 
 [**Click me!**](https://vineetnotfound.vercel.app/)
