@@ -36,7 +36,6 @@ Currently crafting full-stack **web apps**, experimenting with **AI**, and dream
 🚀 “Train Your Own Gesture” module coming soon for personalized control. <br>
 
 🔹 [**Saarthi AI**](https://github.com/vineet-k09/saarthi-ai) <br>
-💡 [Website](https://saarthi-ai-one.vercel.app/) <br>
 🌍 Multilingual government scheme recommender with AI-driven audio and text support. <br>
 📢 Tech: ReactJS, TypeScript, ToughTongueAI, ChatBaseAPI <br>
 
@@ -48,7 +47,7 @@ Currently crafting full-stack **web apps**, experimenting with **AI**, and dream
 📍 Pothole detection web app with emergency dashboard and geolocation <br>
 🛠️ AI image classification + map APIs  <br>
 
-🔹 [**Portfolio Website**](https://vineetnotfound.vercel.app/)() <br>
+🔹 [**Portfolio Website**](https://vineetnotfound.vercel.app/) <br>
 🎨 Built on Nextjs and TailwindCSS <br>
 📍 [Legarcy Version](https://vineet-k09.github.io/indexOLD.html) <br>
 
