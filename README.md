@@ -49,7 +49,7 @@ Currently crafting full-stack **web apps**, experimenting with **AI**, and dream
 
 🔹 [**Portfolio Website**](https://vineetnotfound.vercel.app/) <br>
 🎨 Built on Nextjs and TailwindCSS <br>
-📍 [Legarcy Version](https://vineet-k09.github.io/indexOLD.html) <br>
+📍 [Legacy Version](https://vineet-k09.github.io/indexOLD.html) <br>
 
 More exciting stuff cooking. Stay tuned.
 
