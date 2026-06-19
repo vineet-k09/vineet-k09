@@ -78,23 +78,6 @@ I am a **Backend-focused Software Engineer** based in Bengaluru, India. I specia
 
 </details>
 
----
-
-### ⚡ Professional Experience & Impact
-
-Here is how I apply my engineering skills in production environments:
-
-* **Vodafone Intelligent Solutions (Data Analyst — Jan 2026 – July 2026)**
-  * **Process Automation:** Automated large-scale monthly data validation workflows across 11 global markets (processing 37K+ records per market) using Power Automate and Excel Scripting, dramatically reducing manual effort and processing bottlenecks.
-  * **Systems Development:** Developed core features of a multi-service React/Express/FastAPI learning delivery tool hosted on Google Cloud Run.
-  * **AI Engineering:** Connected SAC dashboards with BigQuery and Gemini 2.5 Flash Lite through secure Express.js APIs to deliver real-time data insights.
-
-* **Infosys Springboard (Full Stack Developer Intern — Oct 2025 – Dec 2025)**
-  * **API Engineering:** Designed and built RESTful web services with a modular backend architecture using Node.js, Express, and MongoDB.
-  * **Performance Tuning:** Debugged application bottlenecks and improved service stability through profiling, testing, and performance optimization.
-
----
-
 <div align="center">
 
 ### 📊 Github Contributions & Stats
