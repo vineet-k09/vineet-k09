@@ -4,13 +4,7 @@
 
 <br />
 
-<div align="center">
-  <a href="https://github.com/vineet-k09">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&duration=3000&pause=800&color=84CC16&center=true&vCenter=true&multiline=false&width=1000&lines=⚡+Backend-Focused+Software+Engineer;🚀+Building+Scalable+APIs+%26+Data+Workflows;🐍+Python+%7C+Node.js+%7C+FastAPI+%7C+React;🧠+Optimizing+for+Performance+%26+High+Throughput" alt="Typing SVG" />
-  </a>
-</div>
-
-<div align="center">
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Major+Mono+Display&size=22&duration=3000&pause=800&color=00ADB5&center=true&vCenter=true&multiline=false&width=1000&lines=⚡+Backend-Focused+Software+Engineer;🚀+Building+Scalable+APIs+%26+Data+Workflows;🐍+Python+%7C+Node.js+%7C+FastAPI+%7C+React;🧠+Optimizing+for+Performance+%26+High+Throughput)](https://github.com/vineet-k09)
   
   [![Portfolio](https://img.shields.io/badge/Portfolio-vineetnotfound.vercel.app-0A2B4E?style=flat-square&logo=vercel&logoColor=white)](https://vineetnotfound.vercel.app/)
   [![LinkedIn](https://img.shields.io/badge/LinkedIn-Vineet_Kushwaha-0A2B4E?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vineet-kushwaha-2666b5257/)
