@@ -41,8 +41,7 @@
   <!-- Animated 2-Level Cat Walking on Line -->
   <g class="walking-cat">
     <!-- Ears -->
-    <text class="cat-text" x="0" y="20">  /\_/\  </text>
-    <!-- Eyes, Body & Tail -->
-    <text class="cat-text" x="0" y="34">=( •.• )~∫</text>
+    <text class="cat-text" x="16" y="20"> /\_/\</text>
+    <text class="cat-text" x="0" y="34"> =( •.• )~∫</text>
   </g>
 </svg>
