@@ -79,15 +79,15 @@
       <!-- Ears & Head -->
       <text x="45" y="58" fill="#58a6ff">   /\_/\   </text>
       <!-- Eyes & Face (Using tspan for perfect inline flow) -->
-      <text x="45" y="76" fill="#58a6ff">  ( <tspan class="cat-eyes" fill="#7ee787">o . o</tspan> )  <tspan fill="#f778ba" font-size="10">~ meow!</tspan></text>
+      <text x="30" y="76" fill="#58a6ff">  ( <tspan class="cat-eyes" fill="#7ee787">o . o</tspan> )  <tspan fill="#f778ba" font-size="10">~ meow!</tspan></text>
       
       <!-- Body & Paws -->
       <text x="45" y="94" fill="#58a6ff">  /  v  \  </text>
       <text x="45" y="112" fill="#58a6ff"> (  | |  ) </text>
-      <text x="45" y="130" fill="#58a6ff"> (=="=="==) </text>
+      <text x="35" y="130" fill="#58a6ff"> (=="=="==) </text>
       
       <!-- Keyboard -->
-      <text x="35" y="148" fill="#8b949e" font-size="10">[⌨️  ⌨️  ⌨️  ⌨️  ⌨️]</text>
+      <text x="25" y="148" fill="#8b949e" font-size="10">[⌨️  ⌨️  ⌨️  ⌨️  ⌨️]</text>
       
       <!-- Tail -->
       <g class="cat-tail">
@@ -96,7 +96,7 @@
     </g>
     
     <!-- Live status -->
-    <text x="15" y="172" fill="#79c0ff" font-family="'Fira Code', monospace" font-size="10">> Compiling 60 FPS MIDI...</text>
+    <text x="15" y="172" fill="#79c0ff" font-family="'Fira Code', monospace" font-size="10">> Compiling main.py...</text>
     <text x="15" y="189" fill="#7ee787" font-family="'Fira Code', monospace" font-size="10">> [OK] Latency: 122ms</text>
   </g>
 </svg>
