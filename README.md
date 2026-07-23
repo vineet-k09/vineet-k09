@@ -119,9 +119,9 @@ I am a **Backend-focused Software Engineer** based in Bengaluru, India. I specia
 <br />
 
 ```text
-  /\_/\
- ( o.o )   "Keep building. Stay curious."
-  > ^ <
+  /\_/\                                   
+( o.o )   "Keep building. Stay curious."
+  > ^ <                                   
 ```
 
 </div>
