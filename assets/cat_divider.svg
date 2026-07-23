@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="45" viewBox="0 0 900 45">
+  <defs>
+    <linearGradient id="dividerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00ADB5" stop-opacity="0" />
+      <stop offset="20%" stop-color="#00ADB5" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#7928CA" stop-opacity="1" />
+      <stop offset="80%" stop-color="#FF0080" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#FF0080" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&amp;display=swap');
+    
+    .divider-line { stroke: url(#dividerGrad); stroke-width: 2px; }
+    
+    /* Walking Cat Animation along line */
+    .walking-cat {
+      animation: catWalk 14s linear infinite;
+    }
+    
+    @keyframes catWalk {
+      0% { transform: translateX(40px); }
+      48% { transform: translateX(780px) scaleX(1); }
+      50% { transform: translateX(780px) scaleX(-1); }
+      98% { transform: translateX(40px) scaleX(-1); }
+      100% { transform: translateX(40px) scaleX(1); }
+    }
+
+    .cat-text {
+      font-family: 'Fira Code', Consolas, monospace;
+      font-size: 14px;
+      font-weight: bold;
+      fill: #58a6ff;
+    }
+  </style>
+
+  <!-- Divider Line -->
+  <line x1="10" y1="32" x2="890" y2="32" class="divider-line" />
+
+  <!-- Animated Cat Walking on Line -->
+  <g class="walking-cat">
+    <text class="cat-text" x="0" y="27">/\_/\ (•.•) ∫</text>
+  </g>
+</svg>

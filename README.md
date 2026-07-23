@@ -1,29 +1,49 @@
 <div align="center">
-  <img src="header.png" alt="Vineet Kushwaha Banner" width="100%" />
+  <img src="assets/terminal_header.svg" alt="Vineet Kushwaha Animated Terminal Header" width="100%" />
 </div>
 
 <br />
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Major+Mono+Display&size=22&duration=3000&pause=800&color=00ADB5&center=true&vCenter=true&multiline=false&width=1000&lines=⚡+Backend-Focused+Software+Engineer;🚀+Building+Scalable+APIs+%26+Data+Workflows;🐍+Python+%7C+Node.js+%7C+FastAPI+%7C+React;🧠+Optimizing+for+Performance+%26+High+Throughput)](https://github.com/vineet-k09)
-  
-  [![Portfolio](https://img.shields.io/badge/Portfolio-vineetnotfound.vercel.app-0A2B4E?style=flat-square&logo=vercel&logoColor=white)](https://vineetnotfound.vercel.app/)
-  [![LinkedIn](https://img.shields.io/badge/LinkedIn-Vineet_Kushwaha-0A2B4E?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vineet-kushwaha-2666b5257/)
-  [![Email](https://img.shields.io/badge/Email-vineetkushwaha6325%40gmail-0A2B4E?style=flat-square&logo=gmail&logoColor=white)](mailto:vineetkushwaha6325@gmail.com)
-
+<div align="center">
+  <a href="https://vineetnotfound.vercel.app/"><img src="https://img.shields.io/badge/Portfolio-vineetnotfound.vercel.app-0A2B4E?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" /></a>
+  <a href="https://www.linkedin.com/in/vineet-kushwaha-2666b5257/"><img src="https://img.shields.io/badge/LinkedIn-Vineet_Kushwaha-0A2B4E?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+  <a href="mailto:vineetkushwaha6325@gmail.com"><img src="https://img.shields.io/badge/Email-vineetkushwaha6325%40gmail.com-0A2B4E?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
 </div>
 
----
+<br />
 
-### 👨‍💻 About Me
+<img src="assets/cat_divider.svg" width="100%" />
+
+### 👨‍💻 System Diagnostic & About Me
 
 I am a **Backend-focused Software Engineer** based in Bengaluru, India. I specialize in designing modular backend systems, building high-throughput APIs, and orchestrating serverless data workflows. I love diving deep into performance tuning, optimizing latency, and solving complex system bottlenecks.
+
+<br />
+
+<div align="center">
+  <img src="assets/cat_status.svg" width="100%" alt="Developer Status & Cat Inspector Widget" />
+</div>
+
+<br />
 
 * **🎓 Education:** B.E. in Computer Science & Engineering (Data Science) @ Acharya Institute of Technology (Graduating June 2026, CGPA: 8.7)
 * **💡 Philosophy:** Write clean, modular, and self-documenting code. Optimize early where it matters (like reducing latency in real-time interfaces), and build architectures that scale.
 
----
+<br />
 
-### 🛠️ Technical Arsenal
+<img src="assets/cat_divider.svg" width="100%" />
+
+### 🛠️ Technical Arsenal & Performance Stats
+
+<div align="center">
+  <img src="assets/skills_matrix.svg" width="100%" alt="ASCII System Resource Monitor - Skills & Proficiency" />
+</div>
+
+<br />
+
+<details>
+<summary><b>🔍 Detailed Tech Stack Badges</b></summary>
+<br />
 
 | Category | Technologies |
 | :--- | :--- |
@@ -32,7 +52,11 @@ I am a **Backend-focused Software Engineer** based in Bengaluru, India. I specia
 | **Databases & Cloud** | ![](https://img.shields.io/badge/PostgreSQL-0A2B4E?style=flat-square&logo=postgresql&logoColor=white) ![](https://img.shields.io/badge/MongoDB-0A2B4E?style=flat-square&logo=mongodb&logoColor=white) ![](https://img.shields.io/badge/MySQL-0A2B4E?style=flat-square&logo=mysql&logoColor=white) ![](https://img.shields.io/badge/GCP-0A2B4E?style=flat-square&logo=googlecloud&logoColor=white) ![](https://img.shields.io/badge/BigQuery-0A2B4E?style=flat-square&logo=googlecloud&logoColor=white) |
 | **Tools & Frontend** | ![](https://img.shields.io/badge/Docker-0A2B4E?style=flat-square&logo=docker&logoColor=white) ![](https://img.shields.io/badge/Git-0A2B4E?style=flat-square&logo=git&logoColor=white) ![](https://img.shields.io/badge/Linux-0A2B4E?style=flat-square&logo=linux&logoColor=white) ![](https://img.shields.io/badge/React-0A2B4E?style=flat-square&logo=react&logoColor=white) ![](https://img.shields.io/badge/Next.js-0A2B4E?style=flat-square&logo=nextdotjs&logoColor=white) |
 
----
+</details>
+
+<br />
+
+<img src="assets/cat_divider.svg" width="100%" />
 
 ### 🚀 Featured Projects
 
@@ -49,7 +73,7 @@ I am a **Backend-focused Software Engineer** based in Bengaluru, India. I specia
 * **Tech Stack:** `React.js`, `Express.js`, `BigQuery`, `Vertex AI (Gemini 2.5 Flash Lite)`
 * **Architecture Highlights:**
   * Embedded directly into SAP Analytics Cloud dashboards, maintaining isolated page, filter, user, row, and cell-level state.
-  * Designed and built the Express.js APIs and BigQuery backend schemas to secure data segregation and fast retrieval across different corporate dashboard environments.
+  * Designed and built the Express.js APIs and BigQuery backend schemas to secure data segregation and fast retrieval across corporate dashboard environments.
   * Integrated Vertex AI workflows for automated, context-aware comment summarization and rewriting.
 
 #### 🎓 iConnect 2.0 — AI-Powered Enterprise Learning Platform
@@ -72,9 +96,13 @@ I am a **Backend-focused Software Engineer** based in Bengaluru, India. I specia
 
 </details>
 
+<br />
+
+<img src="assets/cat_divider.svg" width="100%" />
+
 <div align="center">
 
-### 📊 Github Contributions & Stats
+### 📊 Contribution Matrix & Stats
 
 <br />
 
@@ -85,13 +113,15 @@ I am a **Backend-focused Software Engineer** based in Bengaluru, India. I specia
 </picture> 
 
 <br />
-<sub>Generated automatically daily. Custom snake code run via GitHub Actions.</sub>
+
+<sub><i>"Code is poetry. I'm just here to write a few symphonies in JavaScript & Python."</i></sub>
 
 <br />
-<br />
 
-_"Code is poetry. I'm just here to write a few symphonies in JavaScript & Python."_
-
-🧿 *Keep building. Stay curious.*
+```text
+       /\_/\
+      ( o.o )  < "Keep building. Stay curious."
+       > ^ <
+```
 
 </div>

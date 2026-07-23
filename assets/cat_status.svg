@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="140" viewBox="0 0 900 140">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1117" />
+      <stop offset="100%" stop-color="#161b22" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&amp;display=swap');
+
+    .card-bg { fill: url(#bgGrad); rx: 10px; stroke: #30363d; stroke-width: 1px; }
+    .label { fill: #8b949e; font-family: 'Fira Code', monospace; font-size: 12px; }
+    .val { fill: #00ADB5; font-family: 'Fira Code', monospace; font-size: 14px; font-weight: bold; }
+    .cat-head { fill: #f778ba; font-family: 'Fira Code', monospace; font-size: 14px; font-weight: bold; }
+    
+    .cat-blink { animation: eyeBlink 3.5s infinite; }
+    @keyframes eyeBlink { 0%, 90%, 100% { opacity: 1; } 93%, 95% { opacity: 0; } }
+  </style>
+
+  <rect class="card-bg" width="896" height="136" x="2" y="2" />
+
+  <!-- Metric Column 1 -->
+  <g transform="translate(30, 35)">
+    <text class="label" x="0" y="0">☕ Coffee -&gt; Code Ratio</text>
+    <text class="val" x="0" y="25">100% Automated</text>
+    <text class="label" x="0" y="55">📍 Base Station</text>
+    <text class="val" x="0" y="80">Bengaluru, IN</text>
+  </g>
+
+  <!-- Metric Column 2 -->
+  <g transform="translate(260, 35)">
+    <text class="label" x="0" y="0">⚙️ Primary Paradigm</text>
+    <text class="val" x="0" y="25">Async / Microservices</text>
+    <text class="label" x="0" y="55">🎯 Current Goal</text>
+    <text class="val" x="0" y="80">Low-Latency Systems</text>
+  </g>
+
+  <!-- Metric Column 3 -->
+  <g transform="translate(490, 35)">
+    <text class="label" x="0" y="0">🐱 Code Inspector</text>
+    <text class="val" x="0" y="25">Senior Dev Cat (Pass)</text>
+    <text class="label" x="0" y="55">🎓 Graduation</text>
+    <text class="val" x="0" y="80">June 2026 (CGPA 8.7)</text>
+  </g>
+
+  <!-- Animated Cat Icon Column 4 -->
+  <g transform="translate(730, 28)">
+    <rect x="0" y="0" width="135" height="82" fill="#090d16" rx="8" stroke="#00ADB5" stroke-width="1" />
+    <text class="cat-head" x="25" y="32">/\_/\</text>
+    <text class="cat-blink" fill="#7ee787" font-family="'Fira Code', monospace" font-size="12" font-weight="bold" x="20" y="52">( - . - )</text>
+    <text fill="#8b949e" font-family="'Fira Code', monospace" font-size="10" x="25" y="70">"purr-fect!"</text>
+  </g>
+</svg>
