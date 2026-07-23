@@ -17,8 +17,8 @@
     .header-bar { fill: #121826; rx: 12px 12px 0 0; }
     .title { fill: #58a6ff; font-family: 'Fira Code', Consolas, monospace; font-size: 13px; font-weight: 700; }
     
-    .label { fill: #e6edf3; font-family: 'Fira Code', Consolas, monospace; font-size: 13px; font-weight: 600; }
-    .ascii-bar-fill { fill: url(#barGrad); font-family: 'Fira Code', Consolas, monospace; font-size: 13px; font-weight: 700; }
+    .label { fill: #e6edf3; font-family: 'Fira Code', Consolas, monospace; font-size: 12px; font-weight: 600; }
+    .ascii-bar-fill { fill: url(#barGrad); font-family: 'Fira Code', Consolas, monospace; font-size: 12px; font-weight: 700; }
     .stat-text { fill: #00ADB5; font-family: 'Fira Code', Consolas, monospace; font-size: 12px; }
     .metric-badge { fill: #79c0ff; font-family: 'Fira Code', Consolas, monospace; font-size: 11px; }
 
@@ -32,64 +32,65 @@
   <!-- Header -->
   <path d="M 2,14 A 12,12 0 0,1 14,2 L 886,2 A 12,12 0 0,1 898,14 L 898,38 L 2,38 Z" class="header-bar" />
   <text x="20" y="25" class="title">📊 SYSTEM RESOURCE MONITOR :: TECHNICAL SKILLS &amp; PROFICIENCY</text>
-  <text x="860" y="25" text-anchor="end" fill="#8b949e" font-family="'Fira Code', monospace" font-size="11">[v2.4_STABLE]</text>
+  <text x="875" y="25" text-anchor="end" fill="#8b949e" font-family="'Fira Code', monospace" font-size="11">[v2.4_STABLE]</text>
 
-  <!-- Content Grid -->
+  <!-- Content Grid (Closer spacing so text never cuts off) -->
   <!-- Row 1: Languages -->
-  <g transform="translate(24, 68)">
+  <g transform="translate(20, 68)">
     <text class="label" x="0" y="0">Python / FastAPI</text>
-    <text class="ascii-bar-fill" x="180" y="0">[████████████████████░░░░] 85%</text>
-    <text class="stat-text" x="520" y="0">⚡ Async &amp; Multithreading</text>
-    <text class="metric-badge" x="740" y="0">&lt;60 FPS / 122ms&gt;</text>
+    <text class="ascii-bar-fill" x="160" y="0">[████████████████████░░░░] 85%</text>
+    <text class="stat-text" x="460" y="0">⚡ Async &amp; Multithreaded</text>
+    <text class="metric-badge" x="670" y="0">&lt;60 FPS / 122ms&gt;</text>
   </g>
 
   <!-- Row 2: Node.js / Express -->
-  <g transform="translate(24, 113)">
+  <g transform="translate(20, 113)">
     <text class="label" x="0" y="0">Node.js / Express</text>
-    <text class="ascii-bar-fill" x="180" y="0">[██████████████████████░░] 90%</text>
-    <text class="stat-text" x="520" y="0">🚀 High-Throughput APIs</text>
-    <text class="metric-badge" x="740" y="0">&lt;Modular Routers&gt;</text>
+    <text class="ascii-bar-fill" x="160" y="0">[██████████████████████░░] 90%</text>
+    <text class="stat-text" x="460" y="0">🚀 High-Throughput APIs</text>
+    <text class="metric-badge" x="670" y="0">&lt;Modular Routers&gt;</text>
   </g>
 
   <!-- Row 3: Databases & BigQuery -->
-  <g transform="translate(24, 158)">
-    <text class="label" x="0" y="0">PostgreSQL / BigQuery</text>
-    <text class="ascii-bar-fill" x="180" y="0">[██████████████████░░░░░░] 80%</text>
-    <text class="stat-text" x="520" y="0">🧠 Caching &amp; Cost Opt.</text>
-    <text class="metric-badge" x="740" y="0">&lt;Vertex AI Workflows&gt;</text>
+  <g transform="translate(20, 158)">
+    <text class="label" x="0" y="0">Postgres / BigQuery</text>
+    <text class="ascii-bar-fill" x="160" y="0">[██████████████████░░░░░░] 80%</text>
+    <text class="stat-text" x="460" y="0">🧠 Caching &amp; Cost Opt.</text>
+    <text class="metric-badge" x="670" y="0">&lt;Vertex AI Integration&gt;</text>
   </g>
 
   <!-- Row 4: Docker & Cloud -->
-  <g transform="translate(24, 203)">
+  <g transform="translate(20, 203)">
     <text class="label" x="0" y="0">Docker / GCP Cloud</text>
-    <text class="ascii-bar-fill" x="180" y="0">[████████████████████░░░░] 85%</text>
-    <text class="stat-text" x="520" y="0">🐳 Cloud Run &amp; Microservices</text>
-    <text class="metric-badge" x="740" y="0">&lt;OAuth Service Accounts&gt;</text>
+    <text class="ascii-bar-fill" x="160" y="0">[████████████████████░░░░] 85%</text>
+    <text class="stat-text" x="460" y="0">🐳 Microservice Deployment</text>
+    <text class="metric-badge" x="670" y="0">&lt;Cloud Run / OAuth&gt;</text>
   </g>
 
   <!-- Row 5: React & Frontend -->
-  <g transform="translate(24, 248)">
+  <g transform="translate(20, 248)">
     <text class="label" x="0" y="0">React / Next.js</text>
-    <text class="ascii-bar-fill" x="180" y="0">[████████████████░░░░░░░░] 75%</text>
-    <text class="stat-text" x="520" y="0">💻 Embedded Analytics UI</text>
-    <text class="metric-badge" x="740" y="0">&lt;Tailwind / State Mgt&gt;</text>
+    <text class="ascii-bar-fill" x="160" y="0">[████████████████░░░░░░░░] 75%</text>
+    <text class="stat-text" x="460" y="0">💻 Embedded Analytics UI</text>
+    <text class="metric-badge" x="670" y="0">&lt;Tailwind / State Mgt&gt;</text>
   </g>
 
   <!-- Footer Stats Bar -->
-  <g transform="translate(24, 305)">
-    <line x1="0" y1="-15" x2="850" y2="-15" stroke="#21262d" stroke-width="1" />
+  <g transform="translate(20, 305)">
+    <line x1="0" y1="-15" x2="856" y2="-15" stroke="#21262d" stroke-width="1" />
     <text fill="#8b949e" font-family="'Fira Code', monospace" font-size="12">STATUS: </text>
     <text fill="#7ee787" font-family="'Fira Code', monospace" font-size="12" x="60">ONLINE</text>
     
-    <text fill="#8b949e" font-family="'Fira Code', monospace" font-size="12" x="160">CPU LOAD: </text>
-    <text fill="#00ADB5" font-family="'Fira Code', monospace" font-size="12" x="240">12% (IDLE)</text>
+    <text fill="#8b949e" font-family="'Fira Code', monospace" font-size="12" x="145">CPU LOAD: </text>
+    <text fill="#00ADB5" font-family="'Fira Code', monospace" font-size="12" x="220">12% (IDLE)</text>
     
-    <text fill="#8b949e" font-family="'Fira Code', monospace" font-size="12" x="370">UPTIME: </text>
-    <text fill="#f778ba" font-family="'Fira Code', monospace" font-size="12" x="430">99.9%</text>
+    <text fill="#8b949e" font-family="'Fira Code', monospace" font-size="12" x="340">UPTIME: </text>
+    <text fill="#f778ba" font-family="'Fira Code', monospace" font-size="12" x="400">99.9%</text>
 
-    <!-- Cute ASCII Peek Cat in Footer -->
-    <g class="cat-peek" transform="translate(760, -22)">
-      <text fill="#58a6ff" font-family="'Fira Code', monospace" font-size="12">/\_/\ (o.o)</text>
+    <!-- Peek Cat positioned nicely at x=790 with zero text overlap -->
+    <g class="cat-peek" transform="translate(790, -28)">
+      <text fill="#58a6ff" font-family="'Fira Code', monospace" font-size="11" x="0" y="0">  /\_/\  </text>
+      <text fill="#7ee787" font-family="'Fira Code', monospace" font-size="11" x="0" y="11"> ( o.o ) </text>
     </g>
   </g>
 </svg>

@@ -12,7 +12,7 @@
     .card-bg { fill: url(#bgGrad); rx: 10px; stroke: #30363d; stroke-width: 1px; }
     .label { fill: #8b949e; font-family: 'Fira Code', monospace; font-size: 12px; }
     .val { fill: #00ADB5; font-family: 'Fira Code', monospace; font-size: 14px; font-weight: bold; }
-    .cat-head { fill: #f778ba; font-family: 'Fira Code', monospace; font-size: 14px; font-weight: bold; }
+    .cat-head { fill: #f778ba; font-family: 'Fira Code', monospace; font-size: 13px; font-weight: bold; }
     
     .cat-blink { animation: eyeBlink 3.5s infinite; }
     @keyframes eyeBlink { 0%, 90%, 100% { opacity: 1; } 93%, 95% { opacity: 0; } }
@@ -47,8 +47,9 @@
   <!-- Animated Cat Icon Column 4 -->
   <g transform="translate(730, 28)">
     <rect x="0" y="0" width="135" height="82" fill="#090d16" rx="8" stroke="#00ADB5" stroke-width="1" />
-    <text class="cat-head" x="25" y="32">/\_/\</text>
+    <!-- Ears moved 2-3 spaces rightwards (x=38 instead of 25) -->
+    <text class="cat-head" x="38" y="32">/\_/\</text>
     <text class="cat-blink" fill="#7ee787" font-family="'Fira Code', monospace" font-size="12" font-weight="bold" x="20" y="52">( - . - )</text>
-    <text fill="#8b949e" font-family="'Fira Code', monospace" font-size="10" x="25" y="70">"purr-fect!"</text>
+    <text fill="#8b949e" font-family="'Fira Code', monospace" font-size="10" x="22" y="70">"purr-fect!"</text>
   </g>
 </svg>

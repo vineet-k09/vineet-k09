@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="45" viewBox="0 0 900 45">
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="50" viewBox="0 0 900 50">
   <defs>
     <linearGradient id="dividerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#00ADB5" stop-opacity="0" />
@@ -29,17 +29,20 @@
 
     .cat-text {
       font-family: 'Fira Code', Consolas, monospace;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: bold;
       fill: #58a6ff;
     }
   </style>
 
   <!-- Divider Line -->
-  <line x1="10" y1="32" x2="890" y2="32" class="divider-line" />
+  <line x1="10" y1="38" x2="890" y2="38" class="divider-line" />
 
-  <!-- Animated Cat Walking on Line -->
+  <!-- Animated 2-Level Cat Walking on Line -->
   <g class="walking-cat">
-    <text class="cat-text" x="0" y="27">/\_/\ (•.•) ∫</text>
+    <!-- Ears -->
+    <text class="cat-text" x="0" y="20">  /\_/\  </text>
+    <!-- Eyes, Body & Tail -->
+    <text class="cat-text" x="0" y="34">=( •.• )~∫</text>
   </g>
 </svg>
