@@ -30,7 +30,7 @@
     .cat-eyes { animation: catBlink 4s infinite; }
     @keyframes catBlink { 0%, 90%, 100% { opacity: 1; } 93%, 95% { opacity: 0; } }
     
-    .cat-tail { transform-origin: 740px 115px; animation: wagTail 2s ease-in-out infinite alternate; }
+    .cat-tail { transform-origin: 710px 115px; animation: wagTail 2s ease-in-out infinite alternate; }
     @keyframes wagTail { 0% { transform: rotate(0deg); } 100% { transform: rotate(-15deg); } }
   </style>
 
@@ -89,9 +89,9 @@
       <!-- Keyboard -->
       <text x="25" y="148" fill="#8b949e" font-size="10">[⌨️  ⌨️  ⌨️  ⌨️  ⌨️]</text>
       
-      <!-- Tail -->
+      <!-- Tail shifted left by 25 units -->
       <g class="cat-tail">
-        <path d="M 140,115 Q 165,95 170,120 T 175,135" fill="none" stroke="#58a6ff" stroke-width="2.5" stroke-linecap="round" />
+        <path d="M 115,115 Q 140,95 145,120 T 150,135" fill="none" stroke="#58a6ff" stroke-width="2.5" stroke-linecap="round" />
       </g>
     </g>
     
