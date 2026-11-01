@@ -33,16 +33,10 @@ I am a **Backend-focused Software Engineer** based in Bengaluru, India. I specia
 
 <img src="assets/cat_divider.svg" width="100%" />
 
-### 🛠️ Technical Arsenal & Performance Stats
-
-<div align="center">
-  <img src="assets/skills_matrix.svg" width="100%" alt="ASCII System Resource Monitor - Skills & Proficiency" />
-</div>
-
 <br />
 
 <details>
-<summary><b>🔍 Detailed Tech Stack Badges</b></summary>
+<summary><b>🔍Tech Stack</b></summary>
 <br />
 
 | Category | Technologies |
