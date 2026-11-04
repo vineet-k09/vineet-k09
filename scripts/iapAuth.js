@@ -1,77 +1,148 @@
 /**
- * IAP Iframe Authentication Helper
+ * ============================================================================
+ * Robust IAP (Identity-Aware Proxy) Iframe Authentication Solution
+ * ============================================================================
+ * 
+ * Target Architecture:
+ * - SAP Analytics Cloud (SAC) Dashboard -> Hosts iframe
+ * - Google Cloud Run (Express.js) -> Hosts backend and serves React static build
+ * - Google Cloud IAP -> Protects Cloud Run service
+ * - React -> ZERO CHANGES REQUIRED
  *
- * Solves Google Identity-Aware Proxy (IAP) 403 / unauthenticated iframe issues
- * when embedding a Cloud Run React/Express app inside an iframe (e.g., SAC dashboard).
- *
- * Why this is needed:
- * Google IAP blocks embedding the login page in an iframe (X-Frame-Options: SAMEORIGIN)
- * and cross-origin iframes cannot establish/receive IAP session cookies without top-level navigation.
- *
- * This script provides:
- * 1. authenticateIAP() - Client-side launcher that opens a popup, waits for IAP auth, and closes it.
- * 2. setupIAPAuthRoute() - Express.js route handler serving a lightweight self-closing page (no React UI exposed).
- * 3. handlePopupAuth() - Popup-side script if embedding directly into an HTML page or React index.html.
+ * How this works:
+ * 1. User opens SAC Dashboard. If IAP cookie is missing, iframe shows 403.
+ * 2. SAC script triggers `authenticateIAP()`, opening a centered popup to `/auth-popup`.
+ * 3. IAP intercepts the popup at GCP edge and conducts Google SSO.
+ * 4. Once Google SSO passes, IAP forwards the request to Cloud Run (`/auth-popup`).
+ * 5. Express serves a minimal HTML snippet (NO React bundle downloaded).
+ * 6. The snippet signals the SAC dashboard via postMessage and kills the popup immediately.
+ * 7. SAC script receives the signal and reloads the iframe with authenticated cookies.
+ * ============================================================================
  */
 
-(function (root, factory) {
-  if (typeof define === 'function' && define.amd) {
-    define([], factory);
-  } else if (typeof module === 'object' && module.exports) {
-    module.exports = factory();
-  } else {
-    root.IAPAuth = factory();
-  }
-})(typeof self !== 'undefined' ? self : this, function () {
+// ============================================================================
+// PART 1: EXPRESS.JS BACKEND (Add this to your server.js / app.js)
+// ============================================================================
 
-  /**
-   * Client-Side: Opens a popup window to complete IAP authentication.
-   *
-   * @param {Object|string} options - Configuration object or appUrl string.
-   * @param {string} options.appUrl - Base URL of the IAP-protected Cloud Run app.
-   * @param {string} [options.authRoute='/auth-popup'] - Route path on the app that triggers IAP and auto-closes.
-   * @param {number} [options.width=500] - Popup window width.
-   * @param {number} [options.height=600] - Popup window height.
-   * @param {Function} [options.onComplete] - Callback executed when authentication completes.
-   * @param {Function} [options.onError] - Callback executed if popup is blocked or fails.
-   * @param {Function} [onCompleteCallback] - Callback shorthand if options is passed as a string.
-   * @returns {Window|null} The popup window instance.
-   */
-  function authenticateIAP(options, onCompleteCallback) {
-    var config = {};
-    if (typeof options === 'string') {
-      config.appUrl = options;
-      config.onComplete = onCompleteCallback;
-    } else {
-      config = options || {};
+/**
+ * Registers the lightweight /auth-popup endpoint in Express.
+ * Place this BEFORE any static file serving (express.static) or React catch-all routes!
+ *
+ * @param {import('express').Application} app - The Express app instance
+ * @param {string} [routePath='/auth-popup'] - The route path to register
+ */
+function setupIAPAuthRoute(app, routePath = '/auth-popup') {
+  app.get(routePath, (req, res) => {
+    // Prevent any browser or intermediary caching
+    res.set({
+      'Content-Type': 'text/html; charset=utf-8',
+      'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+      'Pragma': 'no-cache',
+      'Expires': '0'
+    });
+
+    res.send(`<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Authenticating...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background: #f8fafc;
+      color: #334155;
+      text-align: center;
     }
+    .box {
+      padding: 24px;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <p>Authentication complete. Closing window...</p>
+    <button onclick="window.close()" style="margin-top: 10px; padding: 6px 14px; cursor: pointer;">Close Window</button>
+  </div>
+  <script>
+    (function() {
+      // 1. Notify opener window
+      try {
+        if (window.opener) {
+          window.opener.postMessage({ type: 'IAP_AUTH_SUCCESS' }, '*');
+        }
+      } catch (e) {
+        console.error('Failed to notify opener:', e);
+      }
 
-    var appUrl = (config.appUrl || '').replace(/\/+$/, '');
-    var authRoute = config.authRoute || '/auth-popup';
-    var width = config.width || 500;
-    var height = config.height || 600;
-    var onComplete = config.onComplete || function () {};
-    var onError = config.onError || function (err) { console.error('[IAPAuth]', err); };
+      // 2. Self-terminate immediately
+      window.close();
+    })();
+  </script>
+</body>
+</html>`);
+  });
+}
+
+
+// ============================================================================
+// PART 2: SAP ANALYTICS CLOUD (SAC) / CLIENT JAVASCRIPT
+// ============================================================================
+
+/**
+ * Opens an IAP authentication popup and executes a callback or resolves a Promise
+ * when authentication is confirmed.
+ *
+ * @param {Object} options Configuration options
+ * @param {string} options.appUrl Base URL of Cloud Run app (e.g. "https://my-app.run.app")
+ * @param {string} [options.authRoute='/auth-popup'] Dedicated auth route
+ * @param {number} [options.width=520] Width of popup window
+ * @param {number} [options.height=640] Height of popup window
+ * @param {number} [options.timeoutMs=120000] Timeout in milliseconds (default 2 minutes)
+ * @param {Function} [options.onComplete] Callback called on success
+ * @param {Function} [options.onError] Callback called on failure or popup blocked
+ * @returns {Promise<void>} Resolves when authentication succeeds
+ */
+function authenticateIAP(options) {
+  return new Promise(function(resolve, reject) {
+    var appUrl = (options.appUrl || '').replace(/\/+$/, '');
+    var authRoute = options.authRoute || '/auth-popup';
+    var width = options.width || 520;
+    var height = options.height || 640;
+    var timeoutMs = options.timeoutMs || 120000;
+    var onComplete = options.onComplete || function() {};
+    var onError = options.onError || function(err) { console.error('[IAPAuth]', err); };
 
     if (!appUrl) {
-      onError(new Error('appUrl is required for authenticateIAP'));
-      return null;
+      var err = new Error('IAPAuth: appUrl is required');
+      onError(err);
+      return reject(err);
     }
 
-    var left = window.screenLeft !== undefined ? window.screenLeft : window.screenX;
-    var top = window.screenTop !== undefined ? window.screenTop : window.screenY;
+    // Calculate center of current screen
+    var dualScreenLeft = window.screenLeft !== undefined ? window.screenLeft : window.screenX;
+    var dualScreenTop = window.screenTop !== undefined ? window.screenTop : window.screenY;
     var screenWidth = window.innerWidth || document.documentElement.clientWidth || screen.width;
     var screenHeight = window.innerHeight || document.documentElement.clientHeight || screen.height;
 
-    var popupLeft = left + (screenWidth - width) / 2;
-    var popupTop = top + (screenHeight - height) / 2;
+    var left = dualScreenLeft + (screenWidth - width) / 2;
+    var top = dualScreenTop + (screenHeight - height) / 2;
 
     var targetUrl = appUrl + (authRoute.startsWith('/') ? authRoute : '/' + authRoute);
+
     var windowFeatures = [
       'width=' + width,
       'height=' + height,
-      'top=' + popupTop,
-      'left=' + popupLeft,
+      'top=' + top,
+      'left=' + left,
       'menubar=no',
       'toolbar=no',
       'location=yes',
@@ -80,23 +151,32 @@
       'scrollbars=yes'
     ].join(',');
 
-    var popup = window.open(targetUrl, 'IAP_Auth_Window', windowFeatures);
+    // Open popup
+    var popup = window.open(targetUrl, 'IAP_Auth_Popup', windowFeatures);
 
     if (!popup || popup.closed || typeof popup.closed === 'undefined') {
-      onError(new Error('Popup was blocked by the browser. Please allow popups for this site.'));
-      return null;
+      var blockedErr = new Error('Popup blocked! Please allow popups for this dashboard to authenticate.');
+      onError(blockedErr);
+      return reject(blockedErr);
     }
 
     var isResolved = false;
+    var pollTimer = null;
+    var timeoutTimer = null;
 
     function cleanup() {
       if (isResolved) return;
       isResolved = true;
+
       window.removeEventListener('message', handleMessage);
       if (pollTimer) clearInterval(pollTimer);
+      if (timeoutTimer) clearTimeout(timeoutTimer);
+
       onComplete();
+      resolve();
     }
 
+    // Listener 1: Fast postMessage signal from popup script
     function handleMessage(event) {
       if (event.data && event.data.type === 'IAP_AUTH_SUCCESS') {
         cleanup();
@@ -105,80 +185,58 @@
 
     window.addEventListener('message', handleMessage);
 
-    // Fallback: poll if popup window closed manually or closed via script
-    var pollTimer = setInterval(function () {
+    // Listener 2: Fallback polling in case postMessage is dropped or user closes window manually
+    pollTimer = setInterval(function() {
       if (popup.closed) {
         cleanup();
       }
-    }, 500);
+    }, 400);
 
-    return popup;
-  }
-
-  /**
-   * Popup-Side: Executes inside the popup window to notify the parent/opener and close itself.
-   * Can be used inside public/index.html <head> if query parameter matching is desired.
-   *
-   * @param {Object} [options]
-   * @param {string} [options.targetOrigin='*'] - Target origin for window.postMessage.
-   */
-  function handlePopupAuth(options) {
-    var targetOrigin = (options && options.targetOrigin) || '*';
-    if (window.opener) {
-      try {
-        window.opener.postMessage({ type: 'IAP_AUTH_SUCCESS' }, targetOrigin);
-      } catch (err) {
-        console.error('[IAPAuth] Failed to postMessage to opener:', err);
+    // Listener 3: Timeout guard to prevent memory leaks if user abandons popup
+    timeoutTimer = setTimeout(function() {
+      if (!isResolved) {
+        isResolved = true;
+        window.removeEventListener('message', handleMessage);
+        if (pollTimer) clearInterval(pollTimer);
+        try { popup.close(); } catch(e) {}
+        var timeoutErr = new Error('IAP authentication timed out.');
+        onError(timeoutErr);
+        reject(timeoutErr);
       }
-    }
-    window.close();
-  }
+    }, timeoutMs);
+  });
+}
 
-  /**
-   * Server-Side (Express.js): Registers a lightweight authentication endpoint.
-   * This endpoint is protected by IAP. Once the user passes IAP, this serves a minimal HTML
-   * response that signals the opener window and terminates immediately without rendering the React UI.
-   *
-   * @param {Object} app - Express application instance.
-   * @param {string} [routePath='/auth-popup'] - Route path to register.
-   */
-  function setupIAPAuthRoute(app, routePath) {
-    var path = routePath || '/auth-popup';
-    app.get(path, function (req, res) {
-      res.set({
-        'Content-Type': 'text/html; charset=utf-8',
-        'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate'
-      });
-      res.send([
-        '<!DOCTYPE html>',
-        '<html>',
-        '<head>',
-        '  <title>Authenticating...</title>',
-        '  <meta name="viewport" content="width=device-width, initial-scale=1.0">',
-        '  <style>',
-        '    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; background: #f8fafc; color: #334155; }',
-        '    .card { text-align: center; padding: 24px; }',
-        '  </style>',
-        '</head>',
-        '<body>',
-        '  <div class="card">',
-        '    <p>Authenticating session... This window will close automatically.</p>',
-        '  </div>',
-        '  <script>',
-        '    if (window.opener) {',
-        '      window.opener.postMessage({ type: "IAP_AUTH_SUCCESS" }, "*");',
-        '    }',
-        '    window.close();',
-        '  </script>',
-        '</body>',
-        '</html>'
-      ].join('\n'));
-    });
+/**
+ * Convenience helper to reload or set an iframe's source URL safely.
+ *
+ * @param {HTMLIFrameElement|string} iframeOrId DOM element or ID of the iframe
+ * @param {string} url The target URL to set or reload
+ */
+function reloadIframe(iframeOrId, url) {
+  var el = typeof iframeOrId === 'string' ? document.getElementById(iframeOrId) : iframeOrId;
+  if (!el) {
+    console.warn('[IAPAuth] Iframe not found:', iframeOrId);
+    return;
   }
+  // Adding cache-busting timestamp ensures the iframe drops cached 403 responses
+  var separator = url.indexOf('?') === -1 ? '?' : '&';
+  el.src = url + separator + '_auth_sync=' + Date.now();
+}
 
-  return {
+
+// ============================================================================
+// PART 3: UNIVERSAL MODULE EXPORTS
+// ============================================================================
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = {
+    setupIAPAuthRoute: setupIAPAuthRoute,
     authenticateIAP: authenticateIAP,
-    handlePopupAuth: handlePopupAuth,
-    setupIAPAuthRoute: setupIAPAuthRoute
+    reloadIframe: reloadIframe
   };
-});
+} else if (typeof window !== 'undefined') {
+  window.IAPAuth = {
+    authenticateIAP: authenticateIAP,
+    reloadIframe: reloadIframe
+  };
+}

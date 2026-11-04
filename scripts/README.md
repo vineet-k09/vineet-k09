@@ -1,48 +1,68 @@
-# IAP Iframe Authentication Helper
+# Robust IAP Iframe Authentication (SAC + Express)
 
-A helper script for applications hosted on Google Cloud Run protected by Identity-Aware Proxy (IAP) and embedded inside cross-origin iframes (e.g. SAP Analytics Cloud / SAC dashboards).
-
-## The Problem
-Google IAP cannot directly authenticate within an `iframe` because:
-1. Google OAuth redirects are blocked inside iframes (`X-Frame-Options: SAMEORIGIN` / CSP `frame-ancestors 'none'`).
-2. Third-party cookie policies prevent the IAP auth cookies from being established or read in cross-origin iframes without prior top-level user authentication.
-3. You cannot allow users to run or view the application outside the dashboard iframe.
-
-## The Solution
-`scripts/iapAuth.js` provides a dual mechanism:
-1. **Server Route (`setupIAPAuthRoute`)**: Registers `/auth-popup` in Express. When accessed, IAP intercepts the unauthenticated request and handles Google OAuth in the popup. Once authenticated, Cloud Run serves a minimal self-closing HTML page with **zero React UI** loaded.
-2. **Client Helper (`authenticateIAP`)**: Opens the popup, catches the completion signal, and closes the window immediately to refresh or load the iframe.
+A complete solution for embedding a Google Cloud Run application protected by Identity-Aware Proxy (IAP) inside an iframe (e.g. SAP Analytics Cloud dashboard), **without touching React at all**.
 
 ---
 
-## Usage
+## 1. Express Changes (`server.js`)
 
-### 1. In your Express backend (`server.js` or `app.js`)
+Add this endpoint **before** your React static routes / catch-all handlers.
+
 ```javascript
-const express = require('express');
+// In server.js / app.js
+
+// 1. Import helper or paste setupIAPAuthRoute directly
 const { setupIAPAuthRoute } = require('./scripts/iapAuth');
 
-const app = express();
-
-// Register the /auth-popup endpoint before static React routes
+// 2. Register the endpoint (must be BEFORE express.static or app.get('*'))
 setupIAPAuthRoute(app, '/auth-popup');
 
-// ... your regular express and react static routes
+// (Your existing code follows)
+// app.use(express.static(path.join(__dirname, 'build')));
+// app.get('*', (req, res) => res.sendFile(...));
 ```
 
-### 2. In your SAC Dashboard / Parent Wrapper
+### Or paste the inline route directly into `server.js`:
 ```javascript
-// Include iapAuth.js or import { authenticateIAP } from './iapAuth.js'
+app.get('/auth-popup', (req, res) => {
+  res.set({
+    'Content-Type': 'text/html; charset=utf-8',
+    'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate'
+  });
+  res.send(`<!DOCTYPE html>
+<html>
+<body>
+  <p>Authenticating... This window will close automatically.</p>
+  <script>
+    if (window.opener) {
+      window.opener.postMessage({ type: 'IAP_AUTH_SUCCESS' }, '*');
+    }
+    window.close();
+  </script>
+</body>
+</html>`);
+});
+```
 
-const APP_URL = 'https://your-cloud-run-service.a.run.app';
-const iframe = document.getElementById('my-app-iframe');
+---
 
-function startAuth() {
+## 2. SAP Analytics Cloud (SAC) / Dashboard Changes
+
+Use this script in your SAC dashboard (widget script, custom widget, or page script):
+
+```javascript
+// Include iapAuth.js or copy-paste authenticateIAP & reloadIframe
+
+const APP_URL = 'https://your-cloud-run-app.run.app';
+const IFRAME_ID = 'my-react-iframe'; // ID of the iframe in SAC
+
+function loginAndLoadApp() {
   IAPAuth.authenticateIAP({
     appUrl: APP_URL,
     onComplete: function () {
-      console.log('IAP authentication succeeded! Reloading iframe...');
-      iframe.src = APP_URL;
+      console.log('IAP authentication succeeded!');
+      // Reload iframe with fresh auth cookies
+      IAPAuth.reloadIframe(IFRAME_ID, APP_URL);
     },
     onError: function (err) {
       alert(err.message);
@@ -51,16 +71,22 @@ function startAuth() {
 }
 ```
 
-### Alternative: Pure Client-Side in React (`public/index.html`)
-If you cannot modify the Express server, add this at the very top of `<head>` in `public/index.html` before any bundles load:
-```html
-<script>
-  if (new URLSearchParams(window.location.search).get('auth_popup') === '1') {
-    if (window.opener) {
-      window.opener.postMessage({ type: 'IAP_AUTH_SUCCESS' }, '*');
-    }
-    window.close();
+### Using Async / Await:
+```javascript
+async function onDashboardInit() {
+  try {
+    await IAPAuth.authenticateIAP({ appUrl: 'https://your-cloud-run-app.run.app' });
+    IAPAuth.reloadIframe('my-react-iframe', 'https://your-cloud-run-app.run.app');
+  } catch (err) {
+    console.error('Failed to authenticate with IAP:', err);
   }
-</script>
+}
 ```
-And launch the popup with `APP_URL + '/?auth_popup=1'`.
+
+---
+
+## Why React is Untouched:
+- When the popup opens `https://your-cloud-run-app.run.app/auth-popup`, **IAP** handles the entire Google login flow.
+- Once authenticated, Cloud Run serves only the 10-line HTML snippet from `/auth-popup`.
+- The popup sends a message and calls `window.close()`.
+- **Zero React JavaScript bundles are downloaded, executed, or rendered in the popup.**
